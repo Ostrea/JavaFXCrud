@@ -8,20 +8,22 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class OrderController {
-
+/**
+ * Created by qwe on 19.02.2016.
+ */
+public class NewOrderController {
     private Stage primaryStage;
 
     @FXML
-    private void handleAddOrderButton() {
+    private void handleSuppliersButton() {
 
         // Create the dialog Stage.
         Stage dialogStage = new Stage();
-        dialogStage.setTitle("Новый заказ");
+        dialogStage.setTitle("Поставщики по типу товара");
         dialogStage.initModality(Modality.WINDOW_MODAL);
         dialogStage.initOwner(primaryStage);
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("new_order.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("suppliers_query_by_product_type.fxml"));
         Scene scene = null;
         try {
             scene = new Scene(fxmlLoader.load());
@@ -31,9 +33,6 @@ public class OrderController {
 
         dialogStage.setScene(scene);
         dialogStage.showAndWait();
-
-        NewOrderController newOrderController = fxmlLoader.getController();
-        newOrderController.setPrimaryStage(dialogStage);
     }
 
     public void setPrimaryStage(Stage primaryStage) {

@@ -2,8 +2,10 @@ package uni.projects.javafxcrud;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import uni.projects.javafxcrud.controllers.NewOrderController;
 import uni.projects.javafxcrud.controllers.OrderController;
 
 public class Main extends Application {
@@ -19,6 +21,8 @@ public class Main extends Application {
 
         OrderController orderController = fxmlLoader.getController();
         orderController.setPrimaryStage(primaryStage);
+
+
     }
 
     public static void main(String[] args) {
