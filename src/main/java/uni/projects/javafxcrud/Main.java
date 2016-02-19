@@ -14,7 +14,7 @@ public class Main extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("order.fxml"));
 
         primaryStage.setTitle("Заказ");
-        primaryStage.setScene(new Scene((Parent) fxmlLoader.load(), 800, 600));//попросил скастить к parent
+        primaryStage.setScene(new Scene((Parent) fxmlLoader.load(), 800, 600));//here casted to Parent
         primaryStage.setResizable(false);
         primaryStage.show();
 
