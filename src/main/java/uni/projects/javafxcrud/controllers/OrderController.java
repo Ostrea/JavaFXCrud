@@ -2,6 +2,7 @@ package uni.projects.javafxcrud.controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -24,7 +25,7 @@ public class OrderController {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("new_order.fxml"));
         Scene scene = null;
         try {
-            scene = new Scene(fxmlLoader.load());
+            scene = new Scene((Parent) fxmlLoader.load());//idea asked to cast to Parent in some places
         } catch (IOException e) {
             e.printStackTrace();
         }
