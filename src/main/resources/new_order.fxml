@@ -9,7 +9,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane fx:id="newOrderForm" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Text id="text_header" layoutX="242.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Заказ №" wrappingWidth="113.99999856948853" AnchorPane.leftAnchor="242.0" AnchorPane.topAnchor="14.41796875">
@@ -44,7 +43,7 @@
         </columns>
       </TableView>
       <Button fx:id="suppliersBtn" layoutX="668.0" layoutY="86.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="104.0" text="Поставщики" />
-      <Button fx:id="makeOrderBtn" layoutX="668.0" layoutY="174.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="104.0" text="Сделать заказ" />
+      <Button fx:id="makeOrderBtn" layoutX="668.0" layoutY="174.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="104.0" text="Сделать заказ" textAlignment="CENTER" wrapText="true" />
       <Button fx:id="orderBillBtn" disable="true" layoutX="668.0" layoutY="339.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="104.0" text="Счет заказа" />
       <Button fx:id="makeOrderBtn2" disable="true" layoutX="45.0" layoutY="521.0" mnemonicParsing="false" text="Заказать" />
       <Button fx:id="quitBtn" layoutX="650.0" layoutY="521.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="114.0" text="Выход" />
