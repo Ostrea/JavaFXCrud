@@ -2,19 +2,23 @@ package uni.projects.javafxcrud;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import uni.projects.javafxcrud.controllers.OrderController;
 
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("order.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("order.fxml"));
+
         primaryStage.setTitle("Заказ");
-        primaryStage.setScene(new Scene(root, 800, 600));
+        primaryStage.setScene(new Scene(fxmlLoader.load(), 800, 600));
         primaryStage.setResizable(false);
         primaryStage.show();
+
+        OrderController orderController = fxmlLoader.getController();
+        orderController.setPrimaryStage(primaryStage);
     }
 
     public static void main(String[] args) {
