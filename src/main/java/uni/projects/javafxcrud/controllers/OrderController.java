@@ -30,6 +30,10 @@ public class OrderController {
     private Button nextOrderButton;
     @FXML
     private Button previousOrderButton;
+    @FXML
+    private Button lastOrderButton;
+    @FXML
+    private Button firstOrderButton;
 
     private int currentOrderNumber = 0;
 
@@ -45,6 +49,7 @@ public class OrderController {
         showOrder(0);
 
         previousOrderButton.setDisable(true);
+        firstOrderButton.setDisable(true);
     }
 
     private void showOrder(int orderNumber) {
@@ -86,9 +91,13 @@ public class OrderController {
         }
         if (currentOrderNumber == orders.size() - 1) {
             nextOrderButton.setDisable(true);
+            lastOrderButton.setDisable(true);
         }
+
         showOrder(currentOrderNumber);
+
         previousOrderButton.setDisable(false);
+        firstOrderButton.setDisable(false);
     }
 
     @FXML
@@ -98,9 +107,37 @@ public class OrderController {
         }
         if (currentOrderNumber == 0) {
             previousOrderButton.setDisable(true);
+            firstOrderButton.setDisable(true);
         }
+
         showOrder(currentOrderNumber);
+
         nextOrderButton.setDisable(false);
+        lastOrderButton.setDisable(false);
+    }
+
+    @FXML
+    private void handleLastOrderButton() {
+        currentOrderNumber = orders.size() - 1;
+
+        nextOrderButton.setDisable(true);
+        previousOrderButton.setDisable(false);
+        lastOrderButton.setDisable(true);
+        firstOrderButton.setDisable(false);
+
+        showOrder(currentOrderNumber);
+    }
+
+    @FXML
+    private void handleFirstOrderButton() {
+        currentOrderNumber = 0;
+
+        nextOrderButton.setDisable(false);
+        previousOrderButton.setDisable(true);
+        lastOrderButton.setDisable(false);
+        firstOrderButton.setDisable(true);
+
+        showOrder(currentOrderNumber);
     }
 
     public void setPrimaryStage(Stage primaryStage) {
