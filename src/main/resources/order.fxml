@@ -31,12 +31,12 @@
       <TextField fx:id="orderDateTextField" disable="true" layoutX="650.0" layoutY="88.0" prefHeight="26.0" prefWidth="125.0" />
       <CheckBox layoutX="503.0" layoutY="140.0" mnemonicParsing="false" text="Заказ оплачен" />
       <CheckBox layoutX="644.0" layoutY="140.0" mnemonicParsing="false" text="Товар отгружен" />
-      <TableView layoutX="112.0" layoutY="190.0" prefHeight="200.0" prefWidth="600.0">
+      <TableView fx:id="commodityTable" layoutX="112.0" layoutY="190.0" prefHeight="200.0" prefWidth="600.0">
         <columns>
-          <TableColumn prefWidth="150.0" text="Тип товара" />
-          <TableColumn prefWidth="150.0" text="Марка" />
-            <TableColumn prefWidth="150.0" text="Цена за ед., руб" />
-            <TableColumn prefWidth="150.0" text="Количество" />
+          <TableColumn fx:id="commodityTypeColumn" prefWidth="150.0" text="Тип товара" />
+          <TableColumn fx:id="commodityModelColumn" prefWidth="150.0" text="Марка" />
+            <TableColumn fx:id="commodityPriceColumn" prefWidth="150.0" text="Цена за ед., руб" />
+            <TableColumn fx:id="commodityQuantityColumn" prefWidth="150.0" text="Количество" />
         </columns>
       </TableView>
       <Button fx:id="firstOrderButton" layoutX="48.0" layoutY="425.0" mnemonicParsing="false" onAction="#handleFirstOrderButton" prefHeight="26.0" prefWidth="86.0" text="Первая" />
