@@ -23,7 +23,8 @@ public class NewOrderController {
         dialogStage.initModality(Modality.WINDOW_MODAL);
         dialogStage.initOwner(primaryStage);
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("suppliers_query_by_product_type.fxml"));
+        FXMLLoader fxmlLoader =
+                new FXMLLoader(getClass().getClassLoader().getResource("suppliers_query_by_product_type.fxml"));
         Scene scene = null;
         try {
             scene = new Scene(fxmlLoader.load());
