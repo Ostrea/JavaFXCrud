@@ -36,6 +36,26 @@ public class NewOrderController {
         dialogStage.showAndWait();
     }
 
+    @FXML
+    private void handleAddOrderButton(){
+        Stage dialogStage = new Stage();
+        dialogStage.setTitle("Каталог поставщика");
+        dialogStage.initModality(Modality.WINDOW_MODAL);
+        dialogStage.initOwner(primaryStage);
+
+        FXMLLoader fxmlLoader =
+                new FXMLLoader(getClass().getClassLoader().getResource("supplier_catalog.fxml"));
+        Scene scene = null;
+        try {
+            scene = new Scene(fxmlLoader.load());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        dialogStage.setScene(scene);
+        dialogStage.showAndWait();
+    }
+
     public void setPrimaryStage(Stage primaryStage) {
         this.primaryStage = primaryStage;
     }
