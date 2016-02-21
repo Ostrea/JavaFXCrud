@@ -8,9 +8,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-/**
- * Created by qwe on 19.02.2016.
- */
 public class NewOrderController {
     private Stage primaryStage;
 
@@ -37,7 +34,7 @@ public class NewOrderController {
     }
 
     @FXML
-    private void handleAddOrderButton(){
+    private void handleAddOrderButton(){ //Add checking if contract with supplier is out of date
         Stage dialogStage = new Stage();
         dialogStage.setTitle("Каталог поставщика");
         dialogStage.initModality(Modality.WINDOW_MODAL);
