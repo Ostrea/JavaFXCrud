@@ -8,7 +8,13 @@ targetCompatibility = 1.8
 
 repositories {
     jcenter()
+    mavenCentral()
 }
 
 dependencies {
+    compile 'org.hibernate:hibernate-core:5.1.0.Final'
 }
+
+
+
+
