@@ -18,7 +18,7 @@ public class Main extends Application {
         applicationContext = SpringApplication.run(getClass());
         applicationContext.getAutowireCapableBeanFactory().autowireBean(this);
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("order.fxml"));
+        final FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("order.fxml"));
 
         primaryStage.setTitle("Заказ");
         primaryStage.setScene(new Scene(fxmlLoader.load(), 800, 600));
