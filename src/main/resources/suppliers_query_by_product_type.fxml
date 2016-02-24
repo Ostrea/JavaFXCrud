@@ -8,8 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane fx:id="btnOk" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="btnOk" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uni.projects.javafxcrud.controllers.SuppliersQueryByProductTypeController">
    <children>
       <Text fill="#1a8a47" layoutX="173.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Запрос поставщиков и товаров по типу поставляемого товара" textAlignment="CENTER" wrappingWidth="454.2734375">
          <font>

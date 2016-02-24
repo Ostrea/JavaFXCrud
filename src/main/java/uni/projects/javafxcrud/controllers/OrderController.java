@@ -7,6 +7,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import uni.projects.javafxcrud.utils.DialogCreator;
 import uni.projects.javafxcrud.viewmodels.Commodity;
 import uni.projects.javafxcrud.viewmodels.Order;
@@ -15,6 +17,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class OrderController extends BaseController {
     private final ObservableList<Order> orders = FXCollections.observableArrayList();
     private final List<List<Commodity>> commodities = new ArrayList<>();
@@ -52,6 +55,11 @@ public class OrderController extends BaseController {
     private TableColumn<Commodity, Integer> commodityQuantityColumn;
 
     private int currentOrderNumber = 0;
+
+    @Autowired
+    public OrderController(DialogCreator dialogCreator) {
+        super(dialogCreator);
+    }
 
     private void initOrders() {
         for (int i = 1; i < 7; i++) {
@@ -100,8 +108,8 @@ public class OrderController extends BaseController {
 
     @FXML
     private void handleAddOrderButton() {
-//        DialogCreator.createDialog("Новый заказ", primaryStage,
-//                getClass().getClassLoader().getResource("new_order.fxml"));
+        dialogCreator.createAndShowModalDialog("Новый заказ", primaryStage,
+                getClass().getClassLoader().getResource("new_order.fxml"));
     }
 
     @FXML
