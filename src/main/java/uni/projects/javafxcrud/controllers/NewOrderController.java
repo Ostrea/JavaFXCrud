@@ -5,55 +5,31 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import uni.projects.javafxcrud.utils.DialogCreator;
 
 import java.io.IOException;
 
-public class NewOrderController {
-    private Stage primaryStage;
+@Component
+public class NewOrderController extends BaseController {
+
+    @Autowired
+    public NewOrderController(DialogCreator dialogCreator) {
+       super(dialogCreator);
+    }
 
     @FXML
     private void handleSuppliersButton() {
-
-        // Create the dialog Stage.
-        Stage dialogStage = new Stage();
-        dialogStage.setTitle("Поставщики по типу товара");
-        dialogStage.initModality(Modality.WINDOW_MODAL);
-        dialogStage.initOwner(primaryStage);
-
-        FXMLLoader fxmlLoader =
-                new FXMLLoader(getClass().getClassLoader().getResource("suppliers_query_by_product_type.fxml"));
-        Scene scene = null;
-        try {
-            scene = new Scene(fxmlLoader.load());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        dialogStage.setScene(scene);
-        dialogStage.showAndWait();
+        dialogCreator.createAndShowModalDialog("Поставщики по типу товара", primaryStage,
+                getClass().getClassLoader().getResource("suppliers_query_by_product_type.fxml"));
     }
 
     @FXML
-    private void handleAddOrderButton(){ //Add checking if contract with supplier is out of date
-        Stage dialogStage = new Stage();
-        dialogStage.setTitle("Каталог поставщика");
-        dialogStage.initModality(Modality.WINDOW_MODAL);
-        dialogStage.initOwner(primaryStage);
+    private void handleAddOrderButton() {
 
-        FXMLLoader fxmlLoader =
-                new FXMLLoader(getClass().getClassLoader().getResource("supplier_catalog.fxml"));
-        Scene scene = null;
-        try {
-            scene = new Scene(fxmlLoader.load());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        dialogStage.setScene(scene);
-        dialogStage.showAndWait();
-    }
-
-    public void setPrimaryStage(Stage primaryStage) {
-        this.primaryStage = primaryStage;
+        // TODO check if contract with supplier is out of date
+        dialogCreator.createAndShowModalDialog("Каталог поставщика", primaryStage,
+                getClass().getClassLoader().getResource("supplier_catalog.fxml"));
     }
 }

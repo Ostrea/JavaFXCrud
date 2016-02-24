@@ -3,24 +3,22 @@ package uni.projects.javafxcrud.controllers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import uni.projects.javafxcrud.models.Commodity;
-import uni.projects.javafxcrud.models.Order;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import uni.projects.javafxcrud.utils.DialogCreator;
+import uni.projects.javafxcrud.viewmodels.Commodity;
+import uni.projects.javafxcrud.viewmodels.Order;
 
-import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderController {
-    private Stage primaryStage;
+@Component
+public class OrderController extends BaseController {
     private final ObservableList<Order> orders = FXCollections.observableArrayList();
     private final List<List<Commodity>> commodities = new ArrayList<>();
 
@@ -58,6 +56,11 @@ public class OrderController {
 
     private int currentOrderNumber = 0;
 
+    @Autowired
+    public OrderController(DialogCreator dialogCreator) {
+        super(dialogCreator);
+    }
+
     private void initOrders() {
         for (int i = 1; i < 7; i++) {
             orders.add(new Order(i, 7 - i, i + " Supplier",
@@ -86,7 +89,7 @@ public class OrderController {
 
     private void initCommodities() {
         for (int i = 0; i < 6; i++) {
-            List<Commodity> temp = new ArrayList<>();
+            final List<Commodity> temp = new ArrayList<>();
             for (int j = 0; j < 3; j++) {
                 temp.add(new Commodity(i + ":" + j + " type", i + ":" + j + "model", i + j, i + j));
             }
@@ -95,7 +98,7 @@ public class OrderController {
     }
 
     private void showOrder(int orderNumber) {
-        Order currentOrder = orders.get(orderNumber);
+        final Order currentOrder = orders.get(orderNumber);
         orderIdTextField.setText(Long.toString(currentOrder.getId()));
         contractIdTextField.setText(Long.toString(currentOrder.getContractId()));
         supplierTextField.setText(currentOrder.getSupplier());
@@ -105,26 +108,8 @@ public class OrderController {
 
     @FXML
     private void handleAddOrderButton() {
-
-        // Create the dialog Stage.
-        Stage dialogStage = new Stage();
-        dialogStage.setTitle("Новый заказ");
-        dialogStage.initModality(Modality.WINDOW_MODAL);
-        dialogStage.initOwner(primaryStage);
-
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("new_order.fxml"));
-        Scene scene = null;
-        try {
-            scene = new Scene(fxmlLoader.load());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        dialogStage.setScene(scene);
-        dialogStage.showAndWait();
-
-        NewOrderController newOrderController = fxmlLoader.getController();
-        newOrderController.setPrimaryStage(dialogStage);
+        dialogCreator.createAndShowModalDialog("Новый заказ", primaryStage,
+                getClass().getClassLoader().getResource("new_order.fxml"));
     }
 
     @FXML
@@ -181,9 +166,5 @@ public class OrderController {
         firstOrderButton.setDisable(true);
 
         showOrder(currentOrderNumber);
-    }
-
-    public void setPrimaryStage(Stage primaryStage) {
-        this.primaryStage = primaryStage;
     }
 }
