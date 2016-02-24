@@ -20,6 +20,15 @@ public class CommodityTypeDataSet {
     @Column (name = "commodityType")
     private String typeName;
 
+    public CommodityTypeDataSet() {
+    }
+
+    public CommodityTypeDataSet(String typeName) {
+        this.typeName = typeName;
+        this.typeCode = -1;
+        this.catalogDataSets = new ArrayList<>();
+    }
+
     public long getTypeCode() {
         return typeCode;
     }
@@ -32,9 +41,7 @@ public class CommodityTypeDataSet {
         this.typeName = typeName;
     }
 
-    public CommodityTypeDataSet(String typeName) {
-        this.typeName = typeName;
-        this.typeCode = -1;
-        this.catalogDataSets = new ArrayList<>();
+    public void setCatalogDataSets(List<CatalogDataSet> catalogDataSets) {
+        this.catalogDataSets = catalogDataSets;
     }
 }

@@ -10,11 +10,13 @@ public class CatalogDataSet {
     private CommodityTypeDataSet commodityType;
 
     @Id
-    @Column(name = "commodityCode")
+    @Column(name = "commodityId")
     @GeneratedValue (strategy = GenerationType.AUTO)
-    private long commodityCode;
-    @Column(name = "supplierId")
-    private long supplierId;
+    private long commodityId;
+
+    @ManyToOne
+    @JoinColumn(name = "supplierId")
+    private SupplierDataSet supplier;
     @Column(name = "name")
     private String name;
     @Column(name = "characteristic")
@@ -26,31 +28,32 @@ public class CatalogDataSet {
     @Column(name = "price")
     private long price;
 
-    public CatalogDataSet(long supplierId, long commodityCode, String name, String characteristic, String measure, int quantity, long price) {
-        this.supplierId = supplierId;
-        this.commodityCode = commodityCode;
+    public CatalogDataSet(long commodityCode, String name, String characteristic, String measure, int quantity, long price) {
+        this.commodityId = commodityCode;
         this.name = name;
         this.characteristic = characteristic;
         this.measure = measure;
         this.quantity = quantity;
         this.price = price;
-        this.commodityCode = -1;
     }
 
-    public long getSupplierId() {
-        return supplierId;
+    public CatalogDataSet() {
     }
 
-    public void setSupplierId(long postId) {
-        this.supplierId = supplierId;
+    public SupplierDataSet getSupplier() {
+        return supplier;
     }
 
-    public long getCommodityCode() {
-        return commodityCode;
+    public void setSupplier(SupplierDataSet supplier) {
+        this.supplier = supplier;
     }
 
-    public void setCommodityCode(long commodityCode) {
-        this.commodityCode = commodityCode;
+    public long getCommodityId() {
+        return commodityId;
+    }
+
+    public void setCommodityId(long commodityCode) {
+        this.commodityId = commodityCode;
     }
 
     public String getName() {
