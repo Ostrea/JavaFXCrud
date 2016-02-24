@@ -1,32 +1,27 @@
 package uni.projects.javafxcrud;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
-import uni.projects.javafxcrud.controllers.OrderController;
+import uni.projects.javafxcrud.utils.DialogCreator;
 
 @SpringBootApplication
 public class Main extends Application {
     private ConfigurableApplicationContext applicationContext;
+
+    @Autowired
+    private DialogCreator dialogCreator;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         applicationContext = SpringApplication.run(getClass());
         applicationContext.getAutowireCapableBeanFactory().autowireBean(this);
 
-        final FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("order.fxml"));
-
-        primaryStage.setTitle("Заказ");
-        primaryStage.setScene(new Scene(fxmlLoader.load(), 800, 600));
-        primaryStage.setResizable(false);
-        primaryStage.show();
-
-        OrderController orderController = fxmlLoader.getController();
-        orderController.setPrimaryStage(primaryStage);
+        dialogCreator.createAndShowPrimaryDialog("Заказ", primaryStage,
+                getClass().getClassLoader().getResource("order.fxml"));
     }
 
     @Override
