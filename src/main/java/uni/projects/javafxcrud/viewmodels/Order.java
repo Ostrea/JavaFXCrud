@@ -1,4 +1,4 @@
-package uni.projects.javafxcrud.models;
+package uni.projects.javafxcrud.viewmodels;
 
 import javafx.beans.property.*;
 import javafx.collections.FXCollections;

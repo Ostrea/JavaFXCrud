@@ -11,8 +11,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import uni.projects.javafxcrud.models.Commodity;
-import uni.projects.javafxcrud.models.Order;
+import uni.projects.javafxcrud.viewmodels.Commodity;
+import uni.projects.javafxcrud.viewmodels.Order;
 
 import java.io.IOException;
 import java.time.LocalDate;
