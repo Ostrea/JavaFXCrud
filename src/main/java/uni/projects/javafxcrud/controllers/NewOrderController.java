@@ -8,8 +8,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class NewOrderController {
-    private Stage primaryStage;
+public class NewOrderController extends BaseController {
 
     @FXML
     private void handleSuppliersButton() {
@@ -51,9 +50,5 @@ public class NewOrderController {
 
         dialogStage.setScene(scene);
         dialogStage.showAndWait();
-    }
-
-    public void setPrimaryStage(Stage primaryStage) {
-        this.primaryStage = primaryStage;
     }
 }
