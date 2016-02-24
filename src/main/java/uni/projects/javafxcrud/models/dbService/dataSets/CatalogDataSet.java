@@ -9,14 +9,16 @@ public class CatalogDataSet {
     @JoinColumn(name = "commodityTypeId")
     private CommodityTypeDataSet commodityType;
 
+    @ManyToOne
+    @JoinColumn(name = "supplierId")
+    private SupplierDataSet supplier;
+
     @Id
     @Column(name = "commodityId")
     @GeneratedValue (strategy = GenerationType.AUTO)
     private long commodityId;
 
-    @ManyToOne
-    @JoinColumn(name = "supplierId")
-    private SupplierDataSet supplier;
+
     @Column(name = "name")
     private String name;
     @Column(name = "characteristic")
@@ -46,6 +48,14 @@ public class CatalogDataSet {
 
     public void setSupplier(SupplierDataSet supplier) {
         this.supplier = supplier;
+    }
+
+    public CommodityTypeDataSet getCommodityType() {
+        return commodityType;
+    }
+
+    public void setCommodityType(CommodityTypeDataSet commodityType) {
+        this.commodityType = commodityType;
     }
 
     public long getCommodityId() {

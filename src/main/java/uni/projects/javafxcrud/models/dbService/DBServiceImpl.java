@@ -8,6 +8,7 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import uni.projects.javafxcrud.models.dbService.dataSets.CatalogDataSet;
 import uni.projects.javafxcrud.models.dbService.dataSets.CommodityTypeDataSet;
+import uni.projects.javafxcrud.models.dbService.dataSets.SupplierDataSet;
 import uni.projects.javafxcrud.models.dbService.experiments.Student;
 import uni.projects.javafxcrud.models.dbService.experiments.StudentGroup;
 
@@ -26,8 +27,9 @@ public class DBServiceImpl {
 
     private Configuration getMySqlConfiguration() {
         Configuration configuration = new Configuration();
-        configuration.addAnnotatedClass(Student.class);
-        configuration.addAnnotatedClass(StudentGroup.class);
+        configuration.addAnnotatedClass(CommodityTypeDataSet.class);
+        configuration.addAnnotatedClass(CatalogDataSet.class);
+        configuration.addAnnotatedClass(SupplierDataSet.class);
 
         configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
         configuration.setProperty("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");

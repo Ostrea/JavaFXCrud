@@ -1,6 +1,7 @@
 package uni.projects.javafxcrud.models.dbService.dataSets;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -30,6 +31,7 @@ public class SupplierDataSet {
     private List<CatalogDataSet> catalog;
 
     public SupplierDataSet() {
+        catalog = new ArrayList<>();
         this.supplierId = -1;
     }
 
