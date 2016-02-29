@@ -8,7 +8,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane fx:id="billNumField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Text layoutX="301.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="№ счета">
@@ -16,7 +15,7 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Text>
-      <TextField layoutX="420.0" layoutY="5.0" prefHeight="51.0" prefWidth="115.0">
+      <TextField editable="false" layoutX="420.0" layoutY="5.0" prefHeight="51.0" prefWidth="115.0">
          <font>
             <Font size="24.0" />
          </font>
@@ -28,13 +27,13 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="supplierField" layoutX="62.0" layoutY="148.0" prefHeight="25.0" prefWidth="264.0" />
+      <TextField fx:id="supplierField" editable="false" layoutX="62.0" layoutY="148.0" prefHeight="25.0" prefWidth="264.0" />
       <Text fill="#a82929" layoutX="109.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Банковские реквизиты" wrappingWidth="191.0126953125">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="supplierRequisitesField" layoutX="62.0" layoutY="207.0" prefHeight="25.0" prefWidth="264.0" />
+      <TextField fx:id="supplierRequisitesField" editable="false" layoutX="62.0" layoutY="207.0" prefHeight="25.0" prefWidth="264.0" />
       <Text fill="#a82929" layoutX="102.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ИНН" wrappingWidth="92.01269149780273">
          <font>
             <Font size="18.0" />
@@ -46,13 +45,13 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="buyerField" layoutX="474.0" layoutY="148.0" prefHeight="25.0" prefWidth="264.0" />
+      <TextField fx:id="buyerField" editable="false" layoutX="474.0" layoutY="148.0" prefHeight="25.0" prefWidth="264.0" />
       <Text fill="#a82929" layoutX="510.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Банковские реквизиты" wrappingWidth="191.0126953125">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="buyerRequisitesField" layoutX="474.0" layoutY="207.0" prefHeight="25.0" prefWidth="264.0" />
+      <TextField fx:id="buyerRequisitesField" editable="false" layoutX="474.0" layoutY="207.0" prefHeight="25.0" prefWidth="264.0" />
       <TextField fx:id="buyerINNField" layoutX="598.0" layoutY="266.0" prefHeight="25.0" prefWidth="140.0" />
       <Text fill="#a82929" layoutX="474.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ИНН" wrappingWidth="92.01269149780273">
          <font>
@@ -64,7 +63,7 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="paymentDateField" layoutX="194.0" layoutY="375.0" prefHeight="25.0" prefWidth="126.0" />
+      <TextField fx:id="paymentDateField" editable="false" layoutX="194.0" layoutY="375.0" prefHeight="25.0" prefWidth="126.0" />
       <CheckBox fx:id="productPaymentCheckBox" layoutX="157.0" layoutY="410.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="167.0" text="Оплата заказа">
          <font>
             <Font size="14.0" />
@@ -80,13 +79,13 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="sumWihoutNDSField" layoutX="605.0" layoutY="375.0" prefHeight="25.0" prefWidth="126.0" />
+      <TextField fx:id="sumWihoutNDSField" editable="false" layoutX="605.0" layoutY="375.0" prefHeight="25.0" prefWidth="126.0" />
       <Text layoutX="432.0" layoutY="448.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Сумма оплаты с НДС" wrappingWidth="156.13671875">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="sumWithNDSField" layoutX="605.0" layoutY="430.0" prefHeight="25.0" prefWidth="126.0" />
+      <TextField fx:id="sumWithNDSField" editable="false" layoutX="605.0" layoutY="430.0" prefHeight="25.0" prefWidth="126.0" />
       <Button fx:id="btnOK" layoutX="326.0" layoutY="514.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="147.0" text="OK">
          <font>
             <Font size="22.0" />

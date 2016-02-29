@@ -16,7 +16,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="supplierNameField" disable="true" layoutX="400.0" layoutY="13.0" prefHeight="25.0" prefWidth="150.0" />
+      <TextField fx:id="supplierNameField" disable="true" editable="false" layoutX="400.0" layoutY="13.0" prefHeight="25.0" prefWidth="150.0" />
       <Text layoutX="62.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Выберите тип товара" wrappingWidth="221.0">
          <font>
             <Font size="18.0" />
@@ -42,7 +42,7 @@
          </cursor>
       </TableView>
       <Button fx:id="wareHouseBtn" layoutX="62.0" layoutY="369.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="116.0" text="Склад" />
-      <TextField fx:id="priceField" disable="true" layoutX="283.0" layoutY="394.0" prefHeight="25.0" prefWidth="150.0" />
+      <TextField fx:id="priceField" disable="true" editable="false" layoutX="283.0" layoutY="394.0" prefHeight="25.0" prefWidth="150.0" />
       <Text layoutX="300.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Цена товара" wrappingWidth="116.00000858306885">
          <font>
             <Font size="18.0" />
